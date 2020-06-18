@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/fraise"
+        android:icon="@drawable/fraise"
+        android:title="@string/fraise" />
+    <item
+        android:id="@+id/framboise"
+        android:icon="@drawable/framboise"
+        android:title="@string/framboise" />
+    <item
+        android:id="@+id/citron"
+        android:icon="@drawable/citron"
+        android:title="@string/citron" />
+    <item
+        android:id="@+id/orange"
+        android:icon="@drawable/orange"
+        android:title="@string/orange" />
+    <item
+        android:id="@+id/banane"
+        android:icon="@drawable/banane"
+        android:title="@string/banane" />
+    <item
+        android:id="@+id/kiwi"
+        android:icon="@drawable/kiwi"
+        android:title="@string/kiwi" />
+    <item
+        android:id="@+id/prune"
+        android:icon="@drawable/prune"
+        android:title="@string/prune" />
+    <item
+        android:id="@+id/raisin"
+        android:icon="@drawable/raisin"
+        android:title="@string/raisin" />
+    <item
+        android:id="@+id/clear"
+        android:title="@string/clear" />
+</menu>
