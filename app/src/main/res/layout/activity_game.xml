@@ -155,6 +155,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="#FF8A30"
+        android:onClick="validatePressed"
         android:shadowColor="#FF6400"
         android:text="Valider"
         android:textColor="#FFFFFF"

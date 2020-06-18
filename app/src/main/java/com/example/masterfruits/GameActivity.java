@@ -3,11 +3,15 @@ package com.example.masterfruits;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Pair;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,11 +22,16 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GameActivity extends AppCompatActivity {
     ImageView[] slots ;
     ImageView selectedImage ;
     Button Replay ;
     Button Hint;
+    List<Pair<Drawable[],String>> History;
+    RecyclerView.Adapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +44,9 @@ public class GameActivity extends AppCompatActivity {
             for (int i = 1; i < 5; i++){
                 String name = "slot"+i;
                 int id = getResources().getIdentifier(name, "id", this.getPackageName());
-                ImageView slot = findViewById(id);
-                registerForContextMenu(slot);
+               // ImageView slot = findViewById(id);
+                slots[i-1] = findViewById(id);
+                registerForContextMenu(slots[i-1]);
             }
 
             //Action du bouton replay (redémarre l'écran à 0)
@@ -62,6 +72,14 @@ public class GameActivity extends AppCompatActivity {
 
                 }
             });
+
+            //Gestion du recycler view
+            History = new ArrayList<>();
+            adapter = new Result(this, History);
+            RecyclerView recyclerView = findViewById(R.id.recyclerView);
+            recyclerView.setAdapter(adapter);
+            LinearLayoutManager manager = new LinearLayoutManager(this);
+            recyclerView.setLayoutManager(manager);
     }
 
     @SuppressLint("RestrictedApi")
@@ -77,5 +95,15 @@ public class GameActivity extends AppCompatActivity {
         //return super.onContextItemSelected(item);
         selectedImage.setImageBitmap(((BitmapDrawable) item.getIcon()).getBitmap());
         return true;
+    }
+
+    public void validatePressed(View view) {
+        Drawable[] tmp = new Drawable[4];
+        for(int i=0; i < 4; i++){
+             tmp[i] = slots[i].getDrawable();
+        }
+        String toto = "titi";
+        History.add(0, new Pair<Drawable[], String>(tmp, toto));
+        adapter.notifyDataSetChanged();
     }
 }
