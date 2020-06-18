@@ -87,56 +87,64 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="#FFE6C2"
+            android:padding="2dp">
 
             <ImageView
                 android:id="@+id/slot1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:scaleType="centerCrop"
+                android:background="@android:color/white"
                 app:srcCompat="@android:drawable/ic_input_add" />
         </FrameLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="#FFE6C2"
+            android:padding="2dp">
 
             <ImageView
                 android:id="@+id/slot2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:scaleType="centerCrop"
+                android:background="@android:color/white"
                 app:srcCompat="@android:drawable/ic_input_add" />
         </FrameLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="#FFE6C2"
+            android:padding="2dp">
 
             <ImageView
                 android:id="@+id/slot3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:scaleType="centerCrop"
+                android:background="@android:color/white"
                 app:srcCompat="@android:drawable/ic_input_add" />
         </FrameLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="#FFE6C2"
+            android:padding="2dp">
 
             <ImageView
                 android:id="@+id/slot4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:scaleType="centerCrop"
+                android:background="@android:color/white"
                 app:srcCompat="@android:drawable/ic_input_add" />
         </FrameLayout>
     </LinearLayout>

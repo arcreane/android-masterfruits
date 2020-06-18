@@ -70,10 +70,6 @@ public class GameActivity extends AppCompatActivity {
         super.onCreateContextMenu(menu, v, menuInfo);
         getMenuInflater().inflate(R.menu.fruit_choice, menu);
         selectedImage = (ImageView) v;
-        //if(menu instanceof MenuBuilder){
-          //  MenuBuilder m = (MenuBuilder) menu;
-          //  m.setOptionalIconsVisible(true);
-        //}
     }
 
     @Override
