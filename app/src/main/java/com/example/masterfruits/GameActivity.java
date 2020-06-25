@@ -32,6 +32,7 @@ public class GameActivity extends AppCompatActivity {
     Button Hint;
     List<Pair<Drawable[],String>> History;
     RecyclerView.Adapter adapter;
+    Game game;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +81,9 @@ public class GameActivity extends AppCompatActivity {
             recyclerView.setAdapter(adapter);
             LinearLayoutManager manager = new LinearLayoutManager(this);
             recyclerView.setLayoutManager(manager);
+
+            game = new Game();
+            game.startGame();
     }
 
     @SuppressLint("RestrictedApi")
@@ -94,16 +98,22 @@ public class GameActivity extends AppCompatActivity {
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         //return super.onContextItemSelected(item);
         selectedImage.setImageBitmap(((BitmapDrawable) item.getIcon()).getBitmap());
+        selectedImage.setTag(item.getTitle());
         return true;
     }
 
     public void validatePressed(View view) {
         Drawable[] tmp = new Drawable[4];
+        String recupContent = "";
         for(int i=0; i < 4; i++){
              tmp[i] = slots[i].getDrawable();
+            recupContent += (String)slots[i].getTag();
+            if(i < 3) {
+                recupContent += "-";
+            }
         }
-        String toto = "titi";
-        History.add(0, new Pair<Drawable[], String>(tmp, toto));
+        game.play(recupContent);
+        History.add(0, new Pair<Drawable[], String>(tmp, "toto"));
         adapter.notifyDataSetChanged();
     }
 }
